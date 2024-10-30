@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Aku sayang Kamu</h1>
-</body>
-</html>
+@extends('layouts.user')
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/landing.css')}}">
+@endsection
+
+@section('title', 'Rehub - E-Report Hub')
+
+@section('content')
+
+@endsection
+
+      
