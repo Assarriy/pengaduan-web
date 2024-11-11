@@ -27,6 +27,7 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
+                        @if (Auth::guard('masyarakat')->check())
                         <ul class="navbar-nav text-center ml-auto">
                             <li class="nav-item">
                                 <a href="#" class="nav-link ml-auto text-white">
@@ -35,11 +36,11 @@
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link ml-auto text-white" style="text-decoration: underline">
-                                    Masyarakat
+                                    {{ Auth::guard('masyarakat')->user()->nama }}
                                 </a>
                             </li>
                         </ul>
-
+                        @else
                         <ul class="navbar-nav text-center ml-auto">
                             <li class="nav-item">
                                 <button class="btn text-white btn-warning" type="button" data-toggle="modal" data-target="#loginModal">
@@ -50,8 +51,8 @@
                             <li class="nav-item">
                                 <a href="#" class="btn btn-outline-purple">Register</a>
                             </li>
-
                         </ul>
+                        @endif
                         
                     </div>
 
@@ -71,4 +72,28 @@
 
     </section>
 
+    {{-- Section Card Report --}}
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-10 col">
+            <div class="content shadow">
+                @if ($errors->any())
+
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger">{{ $error }}</div>
+                @endforeach
+                    
+                @endif
+            </div>
+        </div>
+    </div>
     {{-- Penutup Body --}}
+
+
+
+    @section('js')
+        @if (Session::has('pesan'))
+            <script>
+                $('#loginModal').modal('show');
+            </script>
+        @endif
+    @endsection
