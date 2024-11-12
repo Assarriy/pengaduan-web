@@ -9,3 +9,4 @@ Route::get('/', function () {
 
 Route::get('/', [UserController::class, 'index'])->name('ereporthub.index');
 
+Route::get('/register', [UserController::class, 'formRegister'])->name('ereporthub.register');

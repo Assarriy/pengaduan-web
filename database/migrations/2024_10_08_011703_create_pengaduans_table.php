@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('lokasi');
             $table->date('tgl_kejadian');
             $table->enum('kategori_kejadian', ['agama', 'hukum', 'lingkugan', 'sosial']);
-            $table->string('foto_path');
+            $table->string('foto');
             $table->enum('status', ['pending', 'proses', 'selesai']);
 
             $table->timestamps();
