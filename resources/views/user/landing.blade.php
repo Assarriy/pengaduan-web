@@ -44,13 +44,13 @@
                         @else
                             <ul class="navbar-nav text-center ml-auto">
                                 <li class="nav-item">
-                                    <button class="btn text-white btn-warning" type="button" data-toggle="modal"
+                                    <button class="btn btn-login" type="button" data-toggle="modal"
                                         data-target="#loginModal">
                                         Login
                                     </button>
                                 </li>
 
-                                <li class="nav-item">
+                                <li class="nav-item pl-2">
                                     <a href="{{ route('ereporthub.register')}}" class="btn btn-outline-purple">Register</a>
                                 </li>
                             </ul>
@@ -122,7 +122,7 @@
     <div class="mt-5">
         <hr>
         <div class="text-center">
-            <p class="italic text-secondary">© 2024 Assa All Rights Reserved</p>
+            <p class="italic text-secondary"> 2024 Assa All Rights Reserved</p>
         </div>
     </div>
     {{-- Penutup Body --}}
@@ -144,7 +144,7 @@
                             <label for="username">Username</label>
                             <input type="text" name="username" id="username" class="form-control">
                         </div>
-                        <button class="btn btn-purple text-white mt-3" style="width: 100%">Login</button>
+                        <button class="btn btn-purple mt-3" style="width: 100%">Login</button>
                     </form>
                     @if (Session::has('pesan'))
                         <div class="alert alert-danger mt-2">
@@ -166,4 +166,5 @@
         </script>
     @endif
 @endsection
+
 
